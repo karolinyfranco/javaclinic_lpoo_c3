@@ -134,11 +134,3 @@ No arquivo pom.xml, a dependência do MySQL Connector/J foi adicionada:
      </dependency>
 </dependencies>
 ```
-## Autores
-
-Desenvolvido por alunos do curso de Ciência da Computação — FAESA, para a disciplina de Linguagem de Programação Orientada a Objetos (C3).
-
-- Ana Luiza Menelli Taylor: [@analuizataylor](https://github.com/analuizataylor)
-- Felipe Valério Rocha: [@sabugoestrela](https://github.com/sabugoestrela)
-- Gustavo Rissoli Vicente: [@GustavoRissoli](https://github.com/GustavoRissoli)
-- Karoliny Vicente Franco: [@karolinyfranco](https://github.com/karolinyfranco)

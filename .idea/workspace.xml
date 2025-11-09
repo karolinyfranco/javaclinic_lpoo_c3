@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8af508d-175a-4c33-8126-7047d5e33db4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/create_tables_javaclinic.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/insert_samples_records.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/insert_samples_related_records.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/conexion/ConexaoMySQL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerConsulta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerPaciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/model/Consulta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/model/Especialidade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/model/Medico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/model/Paciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/model/Pessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/principal/Principal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/reports/Relatorios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/utils/MenuUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/utils/SplashScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/utils/ValidatorUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +33,7 @@
   "keyToString": {
     "Application.Principal.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
