@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: javaclinic_db_lpoo
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: javaclinic_lpoo
+      MYSQL_USER: javaclinic
+      MYSQL_PASSWORD: javaclinic
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+    networks:
+      - javaclinic_net
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: javaclinic_phpmyadmin_lpoo
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: javaclinic_db_lpoo
+      PMA_USER: root
+      PMA_PASSWORD: root
+    depends_on:
+      - mysql
+    networks:
+      - javaclinic_net
+
+networks:
+  javaclinic_net:
+    driver: bridge
