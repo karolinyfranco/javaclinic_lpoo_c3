@@ -52,7 +52,7 @@ public class Relatorios {
      * Exibe o histórico de consultas de um paciente específico.
      */
     public void gerarRelatorioHistoricoPaciente(Scanner sc) {
-        System.out.print("\nDigite o CPF do paciente para buscar o histórico: ");
+        // System.out.print("\nDigite o CPF do paciente para buscar o histórico: ");
         String cpf = sc.nextLine();
 
         String sql = """
@@ -66,7 +66,7 @@ public class Relatorios {
             ORDER BY c.data DESC;
         """;
 
-        System.out.println("\n===== RELATÓRIO: HISTÓRICO DE CONSULTAS DO PACIENTE " + cpf + " =====");
+        System.out.println("\n===== RELATÓRIO: HISTÓRICO DE CONSULTAS DO PACIENTE - CPF " + cpf + " =====");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         boolean encontrouRegistros = false;
 

@@ -46,27 +46,6 @@ public class Principal {
         sc.close();
     }
 
-    // ================== PRINCIPAL ==================
-//    public static void menuPrincipal(){
-//        int opcao;
-//        do {
-//            menuUtils.mostrarMenuPrincipal();
-//            System.out.print("Escolha uma opção: ");
-//            opcao = sc.nextInt();
-//            sc.nextLine();
-//
-//            switch (opcao) {
-//                case 1 -> menuMedicos();
-//                case 2 -> menuPacientes();
-//                case 3 -> menuConsultas();
-//                case 4 -> menuRelatorios();
-//                case 0 -> System.out.println("Encerrando o sistema...");
-//                default -> System.out.println("Opção inválida.");
-//            }
-//
-//        } while (opcao != 0);
-//    }
-
     // ================== RELATÓRIOS ==================
     public static void menuRelatorios() {
         int opcao;
