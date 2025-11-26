@@ -6,7 +6,7 @@ O JavaClinic é um sistema de gerenciamento de consultas médicas desenvolvido e
 
 O objetivo do projeto é simular um sistema de clínica médica, permitindo o cadastro de médicos e pacientes, e o agendamento de consultas, com base em um banco relacional.
 
-Este projeto foi desenvolvido como parte da disciplina de Banco de Dados, com Java + MySQL utilizando Docker e Maven.
+Este projeto foi desenvolvido como parte da disciplina de Linguagem de Programação Orientada a Objetos, com Java + MySQL utilizando Docker e Maven.
 
 
 ## Funcionalidades

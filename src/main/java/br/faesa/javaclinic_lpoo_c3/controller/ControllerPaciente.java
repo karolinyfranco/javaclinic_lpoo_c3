@@ -11,11 +11,17 @@ public class ControllerPaciente {
     ConexaoMySQL conexao = new ConexaoMySQL();
     ValidatorUtils validator = new ValidatorUtils();
 
-    public void inserir(Paciente paciente) {
+    public boolean inserir(Paciente paciente) {
         String sql = "INSERT INTO paciente (cpf, nome, email, telefone, endereco) VALUES (?, ?, ?, ?, ?)";
 
         try {
             conexao.connect();
+
+            //verifica se o CPF já existe
+            if (validator.existePaciente(conexao, paciente.getCpf())) {
+                return false; // ERRO: CPF duplicado
+            }
+
             PreparedStatement stmt = conexao.getConn().prepareStatement(sql);
 
             stmt.setString(1, paciente.getCpf());
@@ -26,32 +32,40 @@ public class ControllerPaciente {
             stmt.executeUpdate();
 
             System.out.println("Paciente inserido com sucesso!");
+            return true;
 
         } catch (SQLException e) {
             System.out.println("Erro ao inserir paciente: " + e.getMessage());
+            return false; // ERRO: geral
         } finally {
             conexao.close();
         }
     }
 
-    public void atualizar(String cpf, String campo, String novoValor) {
-        String sql = "UPDATE paciente SET " + campo + " = ? WHERE cpf = ?";
+    public boolean atualizar(Paciente paciente) {
+        String sql = "UPDATE paciente SET nome=?, email=?, endereco=?, telefone=? WHERE cpf=?";
         try {
             conexao.connect();
-            if (!validator.existePaciente(conexao, cpf)) {
-                System.out.println("Paciente com CPF " + cpf + " não encontrado.");
-                return;
+            if (!validator.existePaciente(conexao, paciente.getCpf())) {
+                System.out.println("Paciente com CPF " + paciente.getCpf() + " não encontrado.");
+                return false;
             }
             PreparedStatement ps = conexao.getConn().prepareStatement(sql);
-            ps.setString(1, novoValor);
-            ps.setString(2, cpf);
+            ps.setString(1, paciente.getNome());
+            ps.setString(2, paciente.getEmail());
+            ps.setString(3, paciente.getEndereco());
+            ps.setString(4, paciente.getTelefone());
+            ps.setString(5, paciente.getCpf()); // WHERE
             ps.executeUpdate();
+
             System.out.println("Paciente atualizado com sucesso!");
+            return true;
         } catch (SQLException e) {
             System.out.println("Erro ao atualizar paciente: " + e.getMessage());
         } finally {
             conexao.close();
         }
+        return false;
     }
 
     public void excluir(String cpf) {
@@ -85,7 +99,7 @@ public class ControllerPaciente {
         try {
             conexao.connect();
             PreparedStatement stmt = conexao.getConn().prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery();  // SEM passar SQL de novo
 
             while (rs.next()) {
                 Paciente paciente = new Paciente(
@@ -105,6 +119,33 @@ public class ControllerPaciente {
         return pacientes;
     }
 
+    public Paciente buscarPorCpf(String cpf) {
+        String sql = "SELECT * FROM paciente WHERE cpf = ?";
+
+        try {
+            conexao.connect();
+            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            ps.setString(1, cpf);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return new Paciente(
+                        rs.getString("nome"),
+                        rs.getString("email"),
+                        rs.getString("endereco"),
+                        rs.getString("telefone"),
+                        rs.getString("crm")
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar paciente: " + e.getMessage());
+        } finally {
+            conexao.close();
+        }
+
+        return null;
+    }
+
     public boolean pacienteTemConsulta(String cpf) {
         String sql = "SELECT COUNT(*) FROM consulta WHERE cpf_paciente = ?";
         try {
@@ -112,7 +153,9 @@ public class ControllerPaciente {
             PreparedStatement ps = conexao.getConn().prepareStatement(sql);
             ps.setString(1, cpf);
             ResultSet rs = ps.executeQuery();
-            if (rs.next() && rs.getInt(1) > 0) return true;
+            if (rs.next() && rs.getInt(1) > 0) {
+                return true;
+            }
         } catch (SQLException e) {
             System.out.println("Erro ao verificar FKs: " + e.getMessage());
         } finally {

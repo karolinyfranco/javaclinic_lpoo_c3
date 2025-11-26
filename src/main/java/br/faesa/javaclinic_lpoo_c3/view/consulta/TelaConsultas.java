@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package br.faesa.javaclinic_lpoo_c3.view;
+package br.faesa.javaclinic_lpoo_c3.view.consulta;
 
 import br.faesa.javaclinic_lpoo_c3.controller.ControllerConsulta;
 import br.faesa.javaclinic_lpoo_c3.model.Consulta;
 import br.faesa.javaclinic_lpoo_c3.model.Especialidade;
+import br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

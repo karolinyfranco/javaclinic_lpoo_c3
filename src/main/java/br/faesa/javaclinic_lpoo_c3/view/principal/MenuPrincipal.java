@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.faesa.javaclinic_lpoo_c3.view;
+package br.faesa.javaclinic_lpoo_c3.view.principal;
+import br.faesa.javaclinic_lpoo_c3.view.medico.MenuMedico;
+import br.faesa.javaclinic_lpoo_c3.view.paciente.MenuPaciente;
+import br.faesa.javaclinic_lpoo_c3.view.consulta.JanelaConsultas;
+import br.faesa.javaclinic_lpoo_c3.view.relatorios.JanelaRelatorios;
+
 import java.util.logging.Logger;
 
 /**
@@ -145,11 +150,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRelatoriosActionPerformed
 
     private void btnMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicosActionPerformed
-        // mostrarTela(new TelaMedicos());
+        new MenuMedico().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnMedicosActionPerformed
 
     private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
-        // mostrarTela(new TelaPacientes());
+        new MenuPaciente().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnPacientesActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

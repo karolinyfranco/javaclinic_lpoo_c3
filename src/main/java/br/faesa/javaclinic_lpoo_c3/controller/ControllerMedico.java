@@ -12,7 +12,7 @@ public class ControllerMedico {
     ConexaoMySQL conexao = new ConexaoMySQL();
     ValidatorUtils validator = new ValidatorUtils();
 
-    public void inserir(Medico medico) {
+    public boolean inserir(Medico medico) {
         String sql = "INSERT INTO medico (crm, nome, email, especialidade, telefone, endereco) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
@@ -28,32 +28,42 @@ public class ControllerMedico {
             stmt.executeUpdate();
 
             System.out.println("Médico inserido com sucesso!");
-
+            return true;
         } catch (SQLException e) {
             System.out.println("Erro ao inserir médico: " + e.getMessage());
         } finally {
             conexao.close();
         }
+        return false;
     }
 
-    public void atualizar(String crm, String campo, String novoValor) {
-        String sql = "UPDATE medico SET " + campo + " = ? WHERE crm = ?";
+    public boolean atualizar(Medico medico) {
+        String sql = "UPDATE medico SET nome=?, email=?, especialidade=?, telefone=?, endereco=? WHERE crm=?";
         try {
             conexao.connect();
-            if (!validator.existeMedico(conexao, crm)) {
-                System.out.println("Médico com CRM " + crm + " não encontrado.");
-                return;
+
+            if (!validator.existeMedico(conexao, medico.getCrm())) {
+                System.out.println("ERRO: Médico não encontrado!");
+                return false;
             }
+
             PreparedStatement ps = conexao.getConn().prepareStatement(sql);
-            ps.setString(1, novoValor);
-            ps.setString(2, crm);
+            ps.setString(1, medico.getNome());
+            ps.setString(2, medico.getEmail());
+            ps.setString(3, medico.getEspecialidade().name());
+            ps.setString(4, medico.getTelefone());
+            ps.setString(5, medico.getEndereco());
+            ps.setString(6, medico.getCrm()); // WHERE
             ps.executeUpdate();
+
             System.out.println("Médico atualizado com sucesso!");
+            return true;
         } catch (SQLException e) {
             System.out.println("Erro ao atualizar médico: " + e.getMessage());
         } finally {
             conexao.close();
         }
+        return false;
     }
 
     public void excluir(String crm) {
@@ -96,7 +106,7 @@ public class ControllerMedico {
                         rs.getString("endereco"),
                         rs.getString("telefone"),
                         rs.getString("crm"),
-                        Especialidade.valueOf(rs.getString("especialidade"))
+                        Especialidade.fromString(rs.getString("especialidade"))
                 );
                 medicos.add(medico);
             }
@@ -106,6 +116,34 @@ public class ControllerMedico {
             conexao.close();
         }
         return medicos;
+    }
+
+    public Medico buscarPorCrm(String crm) {
+        String sql = "SELECT * FROM medico WHERE crm = ?";
+
+        try {
+            conexao.connect();
+            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            ps.setString(1, crm);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return new Medico(
+                        rs.getString("nome"),
+                        rs.getString("email"),
+                        rs.getString("endereco"),
+                        rs.getString("telefone"),
+                        rs.getString("crm"),
+                        Especialidade.valueOf(rs.getString("especialidade"))
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar médico: " + e.getMessage());
+        } finally {
+            conexao.close();
+        }
+
+        return null;
     }
 
     public boolean medicoTemConsulta(String crm) {
