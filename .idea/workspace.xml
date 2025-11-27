@@ -5,45 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8af508d-175a-4c33-8126-7047d5e33db4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/AtualizarMedico.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/AtualizarMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/CadastrarMedico.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/CadastrarMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ExcluirMedico.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ExcluirMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ListarMedico.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ListarMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/MenuMedico.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/MenuMedico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/AtualizarPaciente.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/AtualizarPaciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/CadastrarPaciente.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/CadastrarPaciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ExcluirPaciente.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ExcluirPaciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ListarPaciente.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ListarPaciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/MenuPaciente.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/MenuPaciente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/insert_samples_records.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/insert_samples_records.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerConsulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerConsulta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerMedico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/model/Medico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/model/Medico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/principal/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/principal/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/utils/MenuUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/utils/SplashScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/JanelaConsultas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/JanelaConsultas.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/JanelaConsultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/JanelaConsultas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/JanelaRelatorios.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/relatorios/JanelaRelatorios.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/JanelaRelatorios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/relatorios/JanelaRelatorios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/MenuPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/principal/MenuPrincipal.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/MenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/principal/MenuPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/TelaConsultas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/TelaConsultas.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/TelaConsultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/TelaConsultas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/TelaRelatorios.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/relatorios/TelaRelatorios.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/TelaRelatorios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/relatorios/TelaRelatorios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/TelaConsultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/TelaConsultas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/AtualizarMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/AtualizarMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/CadastrarMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/CadastrarMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ExcluirMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ExcluirMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ListarMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ListarMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/MenuMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/MenuMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/AtualizarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/AtualizarPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/CadastrarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/CadastrarPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ExcluirPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ExcluirPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ListarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ListarPaciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/MenuPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/MenuPaciente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,19 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JanelaConsultas.executor": "Run",
-    "Application.MenuPrincipal.executor": "Run",
-    "Application.Principal.executor": "Run",
-    "Application.br.faesa.javaclinic_lpoo_c3.view.consulta.JanelaConsultas.executor": "Run",
-    "Application.br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/luana/Projects_Faesa/javaclinic_lpoo_c3"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AtualizarMedico.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AtualizarPaciente.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CadastrarMedico.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CadastrarPaciente.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExcluirMedico.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExcluirPaciente.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JanelaConsultas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JanelaRelatorios.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ListarMedico.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MenuPrincipal.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Principal.executor&quot;: &quot;Run&quot;,
+    &quot;Application.br.faesa.javaclinic_lpoo_c3.view.consulta.JanelaConsultas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/luana/Projects_Faesa/trabalho_po_c3&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\luana\Projects_Faesa\javaclinic_lpoo_c3\src\main\java\br\faesa\javaclinic_lpoo_c3\view\paciente" />
@@ -94,12 +80,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Principal">
-    <configuration name="JanelaConsultas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.JanelaConsultas" />
+    <configuration name="AtualizarMedico" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.medico.AtualizarMedico" />
       <module name="javaclinic_lpoo_c3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.*" />
+          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.medico.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +93,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuPrincipal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.MenuPrincipal" />
+    <configuration name="ExcluirMedico" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.medico.ExcluirMedico" />
       <module name="javaclinic_lpoo_c3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.*" />
+          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.medico.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExcluirPaciente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.paciente.ExcluirPaciente" />
+      <module name="javaclinic_lpoo_c3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.paciente.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JanelaRelatorios" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.relatorios.JanelaRelatorios" />
+      <module name="javaclinic_lpoo_c3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.relatorios.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,39 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="br.faesa.javaclinic_lpoo_c3.view.consulta.JanelaConsultas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.consulta.JanelaConsultas" />
-      <module name="javaclinic_lpoo_c3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.consulta.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal" />
-      <module name="javaclinic_lpoo_c3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.faesa.javaclinic_lpoo_c3.view.principal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Principal" />
-        <item itemvalue="Application.br.faesa.javaclinic_lpoo_c3.view.consulta.JanelaConsultas" />
-        <item itemvalue="Application.br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal" />
-        <item itemvalue="Application.JanelaConsultas" />
-        <item itemvalue="Application.MenuPrincipal" />
+        <item itemvalue="Application.ExcluirPaciente" />
+        <item itemvalue="Application.ExcluirMedico" />
+        <item itemvalue="Application.AtualizarMedico" />
+        <item itemvalue="Application.JanelaRelatorios" />
       </list>
     </recent_temporary>
   </component>

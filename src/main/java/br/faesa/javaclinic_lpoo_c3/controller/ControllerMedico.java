@@ -3,14 +3,12 @@ package br.faesa.javaclinic_lpoo_c3.controller;
 import br.faesa.javaclinic_lpoo_c3.conexion.ConexaoMySQL;
 import br.faesa.javaclinic_lpoo_c3.model.Medico;
 import br.faesa.javaclinic_lpoo_c3.model.Especialidade;
-import br.faesa.javaclinic_lpoo_c3.utils.ValidatorUtils;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class ControllerMedico {
     ConexaoMySQL conexao = new ConexaoMySQL();
-    ValidatorUtils validator = new ValidatorUtils();
 
     public boolean inserir(Medico medico) {
         String sql = "INSERT INTO medico (crm, nome, email, especialidade, telefone, endereco) VALUES (?, ?, ?, ?, ?, ?)";
@@ -18,6 +16,11 @@ public class ControllerMedico {
         try {
             conexao.connect();
             PreparedStatement stmt = conexao.getConn().prepareStatement(sql);
+
+            if (existeMedico(medico.getCrm())) {
+                System.out.println("ERRO: Já existe um médico com esse CRM cadastrado.");
+                return false;
+            }
 
             stmt.setString(1, medico.getCrm());
             stmt.setString(2, medico.getNome());
@@ -42,7 +45,7 @@ public class ControllerMedico {
         try {
             conexao.connect();
 
-            if (!validator.existeMedico(conexao, medico.getCrm())) {
+            if (!existeMedico(medico.getCrm())) {
                 System.out.println("ERRO: Médico não encontrado!");
                 return false;
             }
@@ -73,8 +76,14 @@ public class ControllerMedico {
             conexao.connect();
 
             // Verifica se existe antes de excluir
-            if (!validator.existeMedico(conexao, crm)) {
+            if (!existeMedico(crm)) {
                 System.out.println("Médico com CRM " + crm + " não encontrado.");
+                return;
+            }
+
+            // Verifica se o médico possui consulta vinculada
+            if (medicoTemConsulta(crm)){
+                System.out.println("Médico com CRM " + crm + " já possui consulta e não pode ser excluído.");
                 return;
             }
 
@@ -118,46 +127,39 @@ public class ControllerMedico {
         return medicos;
     }
 
-    public Medico buscarPorCrm(String crm) {
-        String sql = "SELECT * FROM medico WHERE crm = ?";
+    public boolean existeMedico(String crm) throws SQLException {
+        ConexaoMySQL conn = new ConexaoMySQL();
+        String sql = "SELECT 1 FROM medico WHERE crm=?";
 
         try {
-            conexao.connect();
-            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            conn.connect();
+            PreparedStatement ps = conn.getConn().prepareStatement(sql);
             ps.setString(1, crm);
+
             ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                return new Medico(
-                        rs.getString("nome"),
-                        rs.getString("email"),
-                        rs.getString("endereco"),
-                        rs.getString("telefone"),
-                        rs.getString("crm"),
-                        Especialidade.valueOf(rs.getString("especialidade"))
-                );
-            }
+            return rs.next();
         } catch (SQLException e) {
-            System.out.println("Erro ao buscar médico: " + e.getMessage());
+            System.out.println("Erro ao verificar existência de médico: " + e.getMessage());
         } finally {
-            conexao.close();
+            conn.close();
         }
-
-        return null;
+        return false;
     }
 
     public boolean medicoTemConsulta(String crm) {
+        ConexaoMySQL conn = new ConexaoMySQL();
         String sql = "SELECT COUNT(*) FROM consulta WHERE crm_medico = ?";
+
         try {
-            conexao.connect();
-            PreparedStatement ps = conexao.getConn().prepareStatement(sql);
+            conn.connect();
+            PreparedStatement ps = conn.getConn().prepareStatement(sql);
             ps.setString(1, crm);
             ResultSet rs = ps.executeQuery();
             if (rs.next() && rs.getInt(1) > 0) return true;
         } catch (SQLException e) {
             System.out.println("Erro ao verificar FKs: " + e.getMessage());
         } finally {
-            conexao.close();
+            conn.close();
         }
         return false;
     }

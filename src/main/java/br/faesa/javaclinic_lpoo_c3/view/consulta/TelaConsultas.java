@@ -7,10 +7,12 @@ package br.faesa.javaclinic_lpoo_c3.view.consulta;
 import br.faesa.javaclinic_lpoo_c3.controller.ControllerConsulta;
 import br.faesa.javaclinic_lpoo_c3.model.Consulta;
 import br.faesa.javaclinic_lpoo_c3.model.Especialidade;
+import br.faesa.javaclinic_lpoo_c3.model.Medico;
 import br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -100,7 +102,15 @@ public class TelaConsultas extends javax.swing.JPanel {
             new String [] {
                 "ID", "CPF Paciente", "CRM Médico", "Especialidade", "Data/Hora"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                    false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabelaConsultas);
 
         btnVoltar.setText("Voltar ao Menu Principal");
@@ -243,7 +253,7 @@ public class TelaConsultas extends javax.swing.JPanel {
             ctrlConsulta.inserir(consulta);
 
             javax.swing.JOptionPane.showMessageDialog(this,
-                    "Consulta agendada (veja também o console).",
+                    "Consulta agendada com sucesso!",
                     "Sucesso",
                     javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
@@ -259,11 +269,10 @@ public class TelaConsultas extends javax.swing.JPanel {
     }
 
     private void carregarConsultas() {
+        ArrayList<Consulta> consultas = ctrlConsulta.listar();
+
         DefaultTableModel modelo = (DefaultTableModel) tabelaConsultas.getModel();
-
-        modelo.setRowCount(0); 
-
-        var consultas = ctrlConsulta.listar(); 
+        modelo.setRowCount(0);
 
         for (Consulta c : consultas) {
             modelo.addRow(new Object[]{

@@ -7,6 +7,7 @@ package br.faesa.javaclinic_lpoo_c3.view.medico;
 import br.faesa.javaclinic_lpoo_c3.controller.ControllerMedico;
 import br.faesa.javaclinic_lpoo_c3.model.Medico;
 import javax.swing.JOptionPane;
+import java.sql.SQLException;
 
 /**
  *
@@ -21,6 +22,8 @@ public class ExcluirMedico extends javax.swing.JFrame {
      */
     public ExcluirMedico() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Excluir Médico - JavaClinic");
     }
 
     /**
@@ -43,9 +46,9 @@ public class ExcluirMedico extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnExcluirMédico.setText("Excluir");
-        btnExcluirMédico.addActionListener(this::btnExcluirMédicoActionPerformed);
+        btnExcluirMédico.addActionListener(this::btnExcluirMedicoActionPerformed);
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);
@@ -56,7 +59,7 @@ public class ExcluirMedico extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -76,11 +79,6 @@ public class ExcluirMedico extends javax.swing.JFrame {
 
         jLabel2.setText("Insira o CRM a ser excluído:");
 
-        try {
-            ftxtFieldCrmMedico.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
         ftxtFieldCrmMedico.addActionListener(this::ftxtFieldCrmMedicoActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,20 +126,51 @@ public class ExcluirMedico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExcluirMédicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirMédicoActionPerformed
-        String crm = ftxtFieldCrmMedico.getText();
+    private void btnExcluirMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirMédicoActionPerformed
+        String crm = ftxtFieldCrmMedico.getText().replaceAll("[^0-9]", "");
 
-        if (crm.isEmpty()) {
-            JOptionPane.showMessageDialog(this,
-                "Preencha o CRM!",
-                "Erro",
-                    JOptionPane.ERROR_MESSAGE);
-            return;
+        try {
+            if (crm.isEmpty()) {
+                JOptionPane.showMessageDialog(this,
+                    "Preencha o CRM!",
+                    "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            ControllerMedico cm = new ControllerMedico();
+
+            if (!cm.existeMedico(crm)) {
+                JOptionPane.showMessageDialog(this,
+                        "Médico com CRM " + crm + " não encontrado.",
+                        "Exclusão não permitida",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (cm.medicoTemConsulta(crm)) {
+                JOptionPane.showMessageDialog(this,
+                        "Este médico possui consultas vinculadas e não pode ser excluído!",
+                        "Exclusão não permitida",
+                        JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            int confirm = JOptionPane.showConfirmDialog(this,
+                    "Tem certeza que deseja excluir o médico de CRM " + crm + "?",
+                    "Confirmar Exclusão",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                cm.excluir(crm);
+                JOptionPane.showMessageDialog(this,
+                        "Médico excluído com sucesso!",
+                        "Sucesso",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao configurar tema: " + e.getMessage());
         }
-        
-        ControllerMedico cm = new ControllerMedico();
-        
-        cm.excluir(crm);
     }//GEN-LAST:event_btnExcluirMédicoActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

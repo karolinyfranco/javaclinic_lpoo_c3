@@ -19,6 +19,8 @@ public class MenuMedico extends javax.swing.JFrame {
      */
     public MenuMedico() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Menu Médicos - JavaClinic");
     }
 
     /**
@@ -56,7 +58,7 @@ public class MenuMedico extends javax.swing.JFrame {
         btnTelaCadastrarM.setText("Cadastrar");
         btnTelaCadastrarM.addActionListener(this::btnTelaCadastrarMActionPerformed);
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);

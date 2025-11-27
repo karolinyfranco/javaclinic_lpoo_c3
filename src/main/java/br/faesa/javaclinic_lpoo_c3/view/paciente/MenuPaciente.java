@@ -24,6 +24,8 @@ public class MenuPaciente extends javax.swing.JFrame {
      */
     public MenuPaciente() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Menu Pacientes - JavaClinic");
     }
 
     /**
@@ -53,7 +55,7 @@ public class MenuPaciente extends javax.swing.JFrame {
         btnTelaCadastrarP.setText("Cadastrar");
         btnTelaCadastrarP.addActionListener(this::btnTelaCadastrarPActionPerformed);
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);

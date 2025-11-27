@@ -24,8 +24,9 @@ public class ListarPaciente extends javax.swing.JFrame {
      */
     public ListarPaciente() {
         initComponents();
-                configurarTabela(); // cria a tabela CERTINHO
-
+        configurarTabela();
+        setLocationRelativeTo(null);
+        setTitle("Listar Pacientes - JavaClinic");
     }
 
     private void configurarTabela() {
@@ -69,9 +70,9 @@ public class ListarPaciente extends javax.swing.JFrame {
         btnLimparCampoP.setText("Limpar campos");
         btnLimparCampoP.addActionListener(this::btnLimparCampoPActionPerformed);
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSair.setText("X");
+        btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -80,7 +81,7 @@ public class ListarPaciente extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -161,7 +162,9 @@ public class ListarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparCampoPActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        dispose();
+        MenuPaciente telaMP = new MenuPaciente();
+        telaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnListarTodosPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarTodosPActionPerformed

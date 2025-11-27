@@ -25,6 +25,8 @@ public class CadastrarMedico extends javax.swing.JFrame {
      */
     public CadastrarMedico() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Cadastrar Médico - JavaClinic");
     }
 
     /**
@@ -44,7 +46,7 @@ public class CadastrarMedico extends javax.swing.JFrame {
         txtFieldEmailMedico = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtFieldEnderecoMedico = new javax.swing.JTextField();
-        txtFieldTelefoneMedico = new javax.swing.JTextField();
+        txtFieldTelefoneMedico = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -61,7 +63,7 @@ public class CadastrarMedico extends javax.swing.JFrame {
 
         txtFieldNomeMedico.addActionListener(this::txtFieldNomeMedicoActionPerformed);
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);
@@ -72,7 +74,7 @@ public class CadastrarMedico extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -111,6 +113,12 @@ public class CadastrarMedico extends javax.swing.JFrame {
         jLabel3.setText("Especialidades:");
 
         cbEspecialidadeM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CARDIOLOGIA", "PEDIATRIA", "DERMATOLOGIA", "ORTOPEDIA", "GINECOLOGIA", " " }));
+
+        try {
+            txtFieldTelefoneMedico.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,9 +239,9 @@ public class CadastrarMedico extends javax.swing.JFrame {
             return;
         }
 
-        
         // String nome, String email, String endereco, String telefone, String crm, Especialidade especialidade
         Medico medico = new Medico(nome, email, endereco, telefone, crm, especialidade);
+
         boolean sucesso = controllerM.inserir(medico);
 
         if (sucesso) {
@@ -325,6 +333,6 @@ public class CadastrarMedico extends javax.swing.JFrame {
     private javax.swing.JTextField txtFieldEmailMedico;
     private javax.swing.JTextField txtFieldEnderecoMedico;
     private javax.swing.JTextField txtFieldNomeMedico;
-    private javax.swing.JTextField txtFieldTelefoneMedico;
+    private javax.swing.JFormattedTextField txtFieldTelefoneMedico;
     // End of variables declaration//GEN-END:variables
 }

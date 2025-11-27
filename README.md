@@ -123,7 +123,7 @@ Depois que terminar de testar:
 
 ## Dependências (Maven)
 
-No arquivo pom.xml, a dependência do MySQL Connector/J foi adicionada:
+No arquivo pom.xml, as dependências do MySQL Connector/J e do Flatlaf foram adicionadas:
 
 ```
 <dependencies>
@@ -132,5 +132,11 @@ No arquivo pom.xml, a dependência do MySQL Connector/J foi adicionada:
             <artifactId>mysql-connector-j</artifactId>
             <version>9.3.0</version>
      </dependency>
+     
+     <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>3.6.2</version>
+        </dependency>
 </dependencies>
 ```

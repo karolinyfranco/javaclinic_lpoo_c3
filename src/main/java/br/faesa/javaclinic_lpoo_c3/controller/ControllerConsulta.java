@@ -3,15 +3,14 @@ package br.faesa.javaclinic_lpoo_c3.controller;
 import br.faesa.javaclinic_lpoo_c3.conexion.ConexaoMySQL;
 import br.faesa.javaclinic_lpoo_c3.model.Consulta;
 import br.faesa.javaclinic_lpoo_c3.model.Especialidade;
-import br.faesa.javaclinic_lpoo_c3.utils.ValidatorUtils;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class ControllerConsulta {
     ConexaoMySQL conexao = new ConexaoMySQL();
-    ValidatorUtils validator = new ValidatorUtils();
-    ArrayList<Consulta> consultas = new ArrayList<>();
+    ControllerPaciente ctrlPaciente = new ControllerPaciente();
+    ControllerMedico ctrlMedico = new ControllerMedico();
 
     public void inserir(Consulta consulta) {
         String sql = "INSERT INTO consulta (cpf_paciente, crm_medico, especialidade, data) VALUES (?, ?, ?, ?)";
@@ -19,12 +18,12 @@ public class ControllerConsulta {
         try {
             conexao.connect();
 
-            if (!validator.existePaciente(conexao, consulta.getCpfPaciente())) {
+            if (!ctrlPaciente.existePaciente(consulta.getCpfPaciente())) {
                 System.out.println("Paciente com CPF " + consulta.getCpfPaciente() + " não encontrado.");
                 return;
             }
 
-            if (!validator.existeMedico(conexao, consulta.getCrmMedico())) {
+            if (!ctrlMedico.existeMedico(consulta.getCrmMedico())) {
                 System.out.println("Médico com CRM " + consulta.getCrmMedico() + " não encontrado.");
                 return;
             }
@@ -53,7 +52,7 @@ public class ControllerConsulta {
             conexao.connect();
 
             // Verifica se existe antes de excluir
-            if (!validator.existeConsulta(conexao, id)) {
+            if (!existeConsulta(id)) {
                 System.out.println("Consulta de ID " + id + " não encontrada.");
                 return;
             }
@@ -71,6 +70,7 @@ public class ControllerConsulta {
     }
 
     public ArrayList<Consulta> listar() {
+        ArrayList<Consulta> consultas = new ArrayList<>();
         String sql = "SELECT * FROM consulta";
 
         try {
@@ -94,6 +94,25 @@ public class ControllerConsulta {
             conexao.close();
         }
         return consultas;
+    }
+
+    public boolean existeConsulta(long id) throws SQLException {
+        ConexaoMySQL conn = new ConexaoMySQL();
+        String sql = "SELECT 1 FROM consulta WHERE id_consulta=?";
+
+        try {
+            conn.connect();
+            PreparedStatement ps = conn.getConn().prepareStatement(sql);
+            ps.setString(1, String.valueOf(id));
+
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            System.out.println("Erro ao verificar existência da consulta: " + e.getMessage());
+        } finally {
+            conn.close();
+        }
+        return false;
     }
 }
 

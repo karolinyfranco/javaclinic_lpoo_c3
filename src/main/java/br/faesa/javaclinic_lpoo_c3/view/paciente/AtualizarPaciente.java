@@ -6,6 +6,8 @@ package br.faesa.javaclinic_lpoo_c3.view.paciente;
 
 import br.faesa.javaclinic_lpoo_c3.controller.ControllerPaciente;
 import br.faesa.javaclinic_lpoo_c3.model.Paciente;
+import br.faesa.javaclinic_lpoo_c3.view.medico.MenuMedico;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +23,8 @@ public class AtualizarPaciente extends javax.swing.JFrame {
      */
     public AtualizarPaciente() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Atualizar Paciente - JavaClinic");
     }
 
     /**
@@ -34,8 +38,6 @@ public class AtualizarPaciente extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        txtFieldEnderecoPaciente = new javax.swing.JTextField();
-        txtFieldTelefonePaciente = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnLimparCampoP = new javax.swing.JButton();
@@ -50,18 +52,13 @@ public class AtualizarPaciente extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
-        txtFieldEnderecoPaciente1 = new javax.swing.JTextField();
+        txtFieldEnderecoPaciente = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
-        txtFieldTelefonePaciente1 = new javax.swing.JTextField();
+        txtFieldTelefonePaciente = new javax.swing.JFormattedTextField();
         jLabel8 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
 
         jLabel6.setText("Telefone:");
-
-        txtFieldEnderecoPaciente.setText("Insira o endereço");
-        txtFieldEnderecoPaciente.addActionListener(this::txtFieldEnderecoPacienteActionPerformed);
-
-        txtFieldTelefonePaciente.addActionListener(this::txtFieldTelefonePacienteActionPerformed);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +78,13 @@ public class AtualizarPaciente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+
+        try {
+            txtFieldTelefonePaciente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         ftxtFieldCpfPaciente.addActionListener(this::ftxtFieldCpfPacienteActionPerformed);
 
         btnSalvarPaciente.setText("Salvar");
@@ -108,15 +112,14 @@ public class AtualizarPaciente extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Editar Dados");
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSair.setText("X");
+        btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);
 
-        txtFieldEnderecoPaciente1.setText("Insira o endereço");
-        txtFieldEnderecoPaciente1.addActionListener(this::txtFieldEnderecoPaciente1ActionPerformed);
+        txtFieldEnderecoPaciente.addActionListener(this::txtFieldEnderecoPacienteActionPerformed);
 
-        txtFieldTelefonePaciente1.addActionListener(this::txtFieldTelefonePaciente1ActionPerformed);
+        txtFieldTelefonePaciente.addActionListener(this::txtFieldTelefonePacienteActionPerformed);
 
         jLabel8.setText("Telefone:");
 
@@ -136,7 +139,7 @@ public class AtualizarPaciente extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(157, 157, 157)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
@@ -145,7 +148,7 @@ public class AtualizarPaciente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFieldTelefonePaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFieldTelefonePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(306, 306, 306)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -160,7 +163,7 @@ public class AtualizarPaciente extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtFieldEmailPaciente, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtFieldNomePaciente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFieldEnderecoPaciente1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtFieldEnderecoPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,11 +211,11 @@ public class AtualizarPaciente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFieldEnderecoPaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFieldEnderecoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(txtFieldTelefonePaciente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFieldTelefonePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
@@ -224,10 +227,6 @@ public class AtualizarPaciente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtFieldTelefonePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldTelefonePacienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldTelefonePacienteActionPerformed
 
     private void btnLimparCampoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCampoPActionPerformed
         ftxtFieldCpfPaciente.setText("");
@@ -242,7 +241,7 @@ public class AtualizarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_ftxtFieldCpfPacienteActionPerformed
 
     private void btnSalvarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarPacienteActionPerformed
-        String cpf = ftxtFieldCpfPaciente.getText();
+        String cpf = ftxtFieldCpfPaciente.getText().replaceAll("[^0-9]", "");
         String nome = txtFieldNomePaciente.getText();
         String email = txtFieldEmailPaciente.getText();
         String telefone = txtFieldTelefonePaciente.getText();
@@ -260,7 +259,6 @@ public class AtualizarPaciente extends javax.swing.JFrame {
 
         Paciente p = new Paciente(nome, email, endereco, telefone, cpf);
 
-        // CHAMADA CERTA (somente uma vez!)
         boolean atualizado = controllerP.atualizar(p);
 
         if (atualizado) {
@@ -281,7 +279,9 @@ public class AtualizarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFieldNomePacienteActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        dispose();
+        MenuPaciente telaMP = new MenuPaciente();
+        telaMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void txtFieldEmailPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldEmailPacienteActionPerformed
@@ -292,13 +292,9 @@ public class AtualizarPaciente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFieldEnderecoPacienteActionPerformed
 
-    private void txtFieldEnderecoPaciente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldEnderecoPaciente1ActionPerformed
+    private void txtFieldTelefonePacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldTelefonePacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldEnderecoPaciente1ActionPerformed
-
-    private void txtFieldTelefonePaciente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldTelefonePaciente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldTelefonePaciente1ActionPerformed
+    }//GEN-LAST:event_txtFieldTelefonePacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -345,9 +341,7 @@ public class AtualizarPaciente extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField txtFieldEmailPaciente;
     private javax.swing.JTextField txtFieldEnderecoPaciente;
-    private javax.swing.JTextField txtFieldEnderecoPaciente1;
     private javax.swing.JTextField txtFieldNomePaciente;
-    private javax.swing.JTextField txtFieldTelefonePaciente;
-    private javax.swing.JTextField txtFieldTelefonePaciente1;
+    private javax.swing.JFormattedTextField txtFieldTelefonePaciente;
     // End of variables declaration//GEN-END:variables
 }

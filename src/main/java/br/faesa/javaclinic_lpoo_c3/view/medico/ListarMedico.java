@@ -23,6 +23,8 @@ public class ListarMedico extends javax.swing.JFrame {
      */
     public ListarMedico() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Listar Médicos - JavaClinic");
     }
 
     /**
@@ -52,7 +54,7 @@ public class ListarMedico extends javax.swing.JFrame {
         btnLimparCampoM.setText("Limpar campos");
         btnLimparCampoM.addActionListener(this::btnLimparCampoMActionPerformed);
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);
@@ -63,7 +65,7 @@ public class ListarMedico extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -87,7 +89,7 @@ public class ListarMedico extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
+                "CRM", "Nome", "E-mail", "Telefone", "Endereço", "Especialidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -165,7 +167,8 @@ public class ListarMedico extends javax.swing.JFrame {
                 m.getNome(),
                 m.getEmail(),
                 m.getTelefone(),
-                m.getEndereco()
+                m.getEndereco(),
+                m.getEspecialidade()
             });
         }
     }//GEN-LAST:event_btnListarTodosMActionPerformed

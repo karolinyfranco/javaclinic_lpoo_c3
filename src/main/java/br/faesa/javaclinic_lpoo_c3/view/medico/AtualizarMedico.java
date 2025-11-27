@@ -7,18 +7,14 @@ package br.faesa.javaclinic_lpoo_c3.view.medico;
 import br.faesa.javaclinic_lpoo_c3.controller.ControllerMedico;
 import br.faesa.javaclinic_lpoo_c3.model.Especialidade;
 import br.faesa.javaclinic_lpoo_c3.model.Medico;
-import br.faesa.javaclinic_lpoo_c3.view.principal.MenuPrincipal;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
  * @author Gessiele Lima
  */
 public class AtualizarMedico extends javax.swing.JFrame {
-    private ControllerMedico controllerM = new ControllerMedico();
-    private String crmOriginal;
-
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AtualizarMedico.class.getName());
 
     /**
@@ -26,6 +22,8 @@ public class AtualizarMedico extends javax.swing.JFrame {
      */
     public AtualizarMedico() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Atualizar Médico - JavaClinic");
     }
 
     /**
@@ -44,7 +42,7 @@ public class AtualizarMedico extends javax.swing.JFrame {
         ftxtFieldCrmMedico = new javax.swing.JFormattedTextField();
         jSeparator3 = new javax.swing.JSeparator();
         btnSalvarMedico = new javax.swing.JButton();
-        txtFieldTelefoneMedico = new javax.swing.JTextField();
+        txtFieldTelefoneMedico = new javax.swing.JFormattedTextField();
         txtFieldNomeMedico = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -62,7 +60,7 @@ public class AtualizarMedico extends javax.swing.JFrame {
         btnLimparCampoP.setText("Limpar");
         btnLimparCampoP.addActionListener(this::btnLimparCampoPActionPerformed);
 
-        btnSair.setBackground(new java.awt.Color(204, 0, 0));
+        btnSair.setBackground(new java.awt.Color(136, 185, 220));
         btnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSair.setText("Voltar");
         btnSair.addActionListener(this::btnSairActionPerformed);
@@ -98,9 +96,15 @@ public class AtualizarMedico extends javax.swing.JFrame {
         jLabel1.setText("Atualizar Médico");
         jLabel1.setToolTipText("");
 
-        jComboBoxEspecialidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CARDIOLOGIA", "PEDIATRIA", "DERMATOLOGIA", "ORTOPEDIA", "GINECOLOGIA", "" }));
+        jComboBoxEspecialidade.setModel(new DefaultComboBoxModel<>(Especialidade.values()));
 
         jLabel6.setText("Especialidade:");
+
+        try {
+            txtFieldTelefoneMedico.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,7 +153,7 @@ public class AtualizarMedico extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(190, 190, 190)
                             .addComponent(btnSalvarMedico)
@@ -211,7 +215,7 @@ public class AtualizarMedico extends javax.swing.JFrame {
     private void btnLimparCampoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCampoPActionPerformed
         ftxtFieldCrmMedico.setText("");
         txtFieldNomeMedico.setText("");
-        txtFieldEmailPaciente.setText("");
+        txtFieldEmailMedico.setText("");
         txtFieldTelefoneMedico.setText("");
         jComboBoxEspecialidade.setSelectedIndex(0);
     }//GEN-LAST:event_btnLimparCampoPActionPerformed
@@ -231,7 +235,7 @@ public class AtualizarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_ftxtFieldCrmMedicoActionPerformed
 
     private void btnSalvarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarMedicoActionPerformed
-        String crm = ftxtFieldCrmMedico.getText().trim();
+        String crm = ftxtFieldCrmMedico.getText().replaceAll("[^0-9]", "");
         String nome = txtFieldNomeMedico.getText().trim();
         String email = txtFieldEmailMedico.getText().trim();
         String telefone = txtFieldTelefoneMedico.getText().trim();
@@ -308,7 +312,7 @@ public class AtualizarMedico extends javax.swing.JFrame {
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvarMedico;
     private javax.swing.JFormattedTextField ftxtFieldCrmMedico;
-    protected javax.swing.JComboBox<String> jComboBoxEspecialidade;
+    protected javax.swing.JComboBox<Especialidade> jComboBoxEspecialidade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -320,16 +324,8 @@ public class AtualizarMedico extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField txtFieldEmailMedico;
-    private javax.swing.JTextField txtFieldEmailPaciente;
-    private javax.swing.JTextField txtFieldEmailPaciente1;
-    private javax.swing.JTextField txtFieldEmailPaciente2;
-    private javax.swing.JTextField txtFieldEmailPaciente3;
-    private javax.swing.JTextField txtFieldEmailPaciente4;
-    private javax.swing.JTextField txtFieldEmailPaciente5;
-    private javax.swing.JTextField txtFieldEmailPaciente6;
-    private javax.swing.JTextField txtFieldEmailPaciente7;
     private javax.swing.JTextField txtFieldEnderecoMedico;
     private javax.swing.JTextField txtFieldNomeMedico;
-    private javax.swing.JTextField txtFieldTelefoneMedico;
+    private javax.swing.JFormattedTextField txtFieldTelefoneMedico;
     // End of variables declaration//GEN-END:variables
 }
