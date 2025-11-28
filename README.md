@@ -36,7 +36,7 @@ javaclinic_lpoo_c3/
 │        ├── controller/         # Controle das operações CRUD
 │        ├── conexion/           # Conexão com o banco via JDBC
 │        ├── reports/            # Geração de relatórios
-│        ├── utils/              # Utilitários gerais
+│        ├── view/               # Telas do sistema
 │        └── principal/          # Ponto de entrada da aplicação
 │
 ├── sql/                         # Scripts SQL de criação e inserção de dados  

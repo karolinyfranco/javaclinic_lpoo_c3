@@ -104,7 +104,7 @@ public class ControllerPaciente {
         try {
             conexao.connect();
             PreparedStatement stmt = conexao.getConn().prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();  // SEM passar SQL de novo
+            ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
                 Paciente paciente = new Paciente(

@@ -6,22 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c8af508d-175a-4c33-8126-7047d5e33db4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/insert_samples_records.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/insert_samples_records.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerConsulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerConsulta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/insert_samples_related_records.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/insert_samples_related_records.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/controller/ControllerPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/TelaConsultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/consulta/TelaConsultas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/AtualizarMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/AtualizarMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/CadastrarMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/CadastrarMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ExcluirMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ExcluirMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ListarMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/ListarMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/MenuMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/medico/MenuMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/AtualizarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/AtualizarPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/CadastrarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/CadastrarPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ExcluirPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ExcluirPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ListarPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/ListarPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/MenuPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/faesa/javaclinic_lpoo_c3/view/paciente/MenuPaciente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

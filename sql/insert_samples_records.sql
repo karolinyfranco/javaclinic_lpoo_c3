@@ -2,11 +2,11 @@ USE javaclinic_lpoo;
 
 /* INSERE DADOS NA TABELA DE MÉDICOS */
 INSERT INTO medico (crm, nome, email, especialidade, telefone, endereco) VALUES
-('1001', 'João Silva', 'joao.silva@clinic.com', 'CARDIOLOGIA', '(27) 99999-1111', 'Rua das Flores-123-Centro-Vitória-ES'),
-('1002', 'Maria Souza', 'maria.souza@clinic.com', 'PEDIATRIA', '(27) 98888-2222', 'Rua da Paz-456-Jardim-Cariacica-ES'),
-('1003', 'Ricardo Lima', 'ricardo.lima@clinic.com', 'DERMATOLOGIA', '(27) 97777-3333', 'Av. Central-789-Boa Vista-Vila Velha-ES'),
-('1004', 'Fernanda Torres', 'fernanda.torres@clinic.com', 'ORTOPEDIA', '(27) 96666-4444', 'Rua Alegre-321-Industrial-Serra-ES'),
-('1005', 'Paulo Mendes', 'paulo.mendes@clinic.com', 'GINECOLOGIA', '(27) 95555-5555', 'Rua Bahia-654-Residencial-Vitória-ES');
+('CRMES1001', 'João Silva', 'joao.silva@clinic.com', 'CARDIOLOGIA', '(27) 99999-1111', 'Rua das Flores-123-Centro-Vitória-ES'),
+('CRMES1002', 'Maria Souza', 'maria.souza@clinic.com', 'PEDIATRIA', '(27) 98888-2222', 'Rua da Paz-456-Jardim-Cariacica-ES'),
+('CRMES1003', 'Ricardo Lima', 'ricardo.lima@clinic.com', 'DERMATOLOGIA', '(27) 97777-3333', 'Av. Central-789-Boa Vista-Vila Velha-ES'),
+('CRMES1004', 'Fernanda Torres', 'fernanda.torres@clinic.com', 'ORTOPEDIA', '(27) 96666-4444', 'Rua Alegre-321-Industrial-Serra-ES'),
+('CRMES1005', 'Paulo Mendes', 'paulo.mendes@clinic.com', 'GINECOLOGIA', '(27) 95555-5555', 'Rua Bahia-654-Residencial-Vitória-ES');
 
 /* INSERE DADOS NA TABELA DE PACIENTES */
 INSERT INTO paciente (cpf, nome, email, telefone, endereco) VALUES
